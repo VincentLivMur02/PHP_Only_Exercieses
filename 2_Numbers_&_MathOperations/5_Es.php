@@ -12,7 +12,7 @@ Esercizio 5:
 # area del quadrato = lato * lato
 $side_square = 4;
 
-$square_area = 4 ** 4; 
+$square_area = 4 ** 2;
 
 $result = "Risultato dell'area è: " . $square_area . "cm";
 

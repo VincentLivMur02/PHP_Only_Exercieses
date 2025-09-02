@@ -13,10 +13,9 @@ Esercizio 4:
 $totalApples = 17;
 $childrenNum = 5;
 
-$equalDiv = $totalApples / $childrenNum;
+$equalDiv = intdiv($totalApples, $childrenNum); # intdiv() ti dà il risultato intero della divisione
 $result = $totalApples % $childrenNum; 
 
 echo "Ogni bambino avrà a testa: $equalDiv mele", PHP_EOL; # divisione equa tra i bambini 
 echo "Rimangono $result mele"; # risultato delle mele dopo averle divise equamente tra i bambini
 
-// come faccio ad avere un numero intero qui: echo "Ogni bambino avrà a testa: $equalDiv mele"; ? 

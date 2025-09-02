@@ -14,10 +14,8 @@ Esercizio 2:
 $base_price = 10.50; # prezzo base
 $discount = 5; # sconto
 
-$finalDiscountPrice = $base_price + $discount; # calcolo la somma dei prezzi 
-$finalPrice = $finalDiscountPrice / $discount; # divido la somma dei prezzi precedente con il prezzo scontato che mi da il prezzo finale
+$discountEuros = $base_price * $discount / 100; # calcolo dello sconto in €
+$finalPrice = $base_price - $discount; # sottraggo lo sconto dal prezzo base
 
-echo "Lo sconto è: " . $finaleDiscountPrice . "€"; # sconto finale
 echo "Il prezzo finale del prodotto è di: ". $finalPrice . "€"; # prezzo finale
 
-// Dubbi... 
