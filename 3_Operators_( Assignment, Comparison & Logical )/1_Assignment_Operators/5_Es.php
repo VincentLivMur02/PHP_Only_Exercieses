@@ -9,15 +9,12 @@ Esercizio 5:
 - Stampa il nuovo valore del bonus.
 
 */
-
 $bonus = 2435;
 
-$bonus *= 10;
+$bonus += $bonus * 0.10; # calcolo il 10% del bonus e lo aggiungo al valore iniziale
 
-$bonus /= 100;
+echo $bonus; 
 
-echo $bonus;
 
-// dubbi...
 
 
