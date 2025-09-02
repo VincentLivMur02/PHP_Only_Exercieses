@@ -11,12 +11,11 @@ Esercizio 10:
 
 */
 
-$nullVar = "Hello";
+$nullVar; # variabile senza valore = null
 
 $resultOne = $nullVar == null;
 $resultTwo = $nullVar === null;
 
-echo $resultOne, PHP_EOL;
-echo $resultTwo;
+echo $resultOne, PHP_EOL; # Output: 1 (true), perché il valore è uguale a null.
+echo $resultTwo; # Output: 1 (true), perché il valore e il tipo sono entrambi null.
 
-// Dubbi... 

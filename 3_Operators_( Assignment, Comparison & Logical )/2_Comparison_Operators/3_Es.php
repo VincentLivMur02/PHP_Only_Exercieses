@@ -16,7 +16,7 @@ $myAge = 2002;
 $currentYear = 2025;
 $legalAge = 18;
 
-$currentAge = $currentYear -= $myAge; # calcolo la mia età 
+$currentAge = $currentYear - $myAge; # calcolo la mia età 
 $ages = $currentAge >= $legalAge; # l'età corrente è maggiore o uguale a età legale??
 
 echo "La mia età: " . $currentAge . " anni", PHP_EOL; # stampo a schermo l'età corrente

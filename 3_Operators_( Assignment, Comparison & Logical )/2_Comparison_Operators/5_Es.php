@@ -10,6 +10,4 @@ Esercizio 5:
 */
 
 $loggedUser = true;
-$loggedUser == false;
-
-echo $loggedUser; # risultato è 1, true 
+echo $loggedUser == false;  # risultato è 1, true 
