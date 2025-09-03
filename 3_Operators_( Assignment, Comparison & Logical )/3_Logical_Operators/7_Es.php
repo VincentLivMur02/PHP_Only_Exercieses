@@ -11,11 +11,11 @@ Esercizio 7:
 
 */
 
-$haveBadge = false;
-$total = 99;
+$haveBadge = true;
+$total = 100;
 
 # ciclo if, ho la logica per gestire lo sconto dei clienti
-if ($haveBadge === true OR $total > 100) { 
+if ($haveBadge === true || $total > 100) { 
     echo "The client is entitled to a discount "; # possono averlo, solo se hanno una carta fedeltà o speso + di 100 ( vale se non hanno una di queste cose )
 } else {
     echo "Isn't entitled to a discount"; # se non hanno nessuna delle due, false non hanno diritto

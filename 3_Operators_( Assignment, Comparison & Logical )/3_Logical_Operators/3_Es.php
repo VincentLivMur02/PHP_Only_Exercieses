@@ -14,6 +14,6 @@ Esercizio 3:
 $dayOfTheWeek = "Sunday";
 
 # controllo del giorno della settimana
-$checkDay = $dayOfTheWeek OR "Saturday";
+$checkDay = $dayOfTheWeek === "Saunday" || $dayOfTheWeek === "Saturday";
 
 echo "The day of the week in the variable is: $checkDay"; # Corretto "Sunday" è il giorno assegnato

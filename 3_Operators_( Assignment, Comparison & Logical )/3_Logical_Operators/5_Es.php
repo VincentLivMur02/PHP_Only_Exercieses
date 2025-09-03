@@ -11,9 +11,9 @@ Esercizio 5:
 */
 
 $blockUser = false;
-$user = $blockUser != $blockUser;
 
-echo $user; 
+echo !$blockUser; # Questo stamperà 1 (true), perché l'utente non è bloccato.
 
-// dubbi...
+
+
 

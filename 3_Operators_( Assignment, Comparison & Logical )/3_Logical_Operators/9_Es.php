@@ -12,6 +12,6 @@ Esercizio 9:
 
 $season = "spring";
 
-$season === "summer" OR $season === "autumn" OR $season === "winter" OR $season === "spring";
+$result = $season === "summer" || $season === "autumn" || $season === "winter" || $season === "spring";
 
-echo "The season in the variable is: " . $season;
+echo "The season in the variable is: " . $result;

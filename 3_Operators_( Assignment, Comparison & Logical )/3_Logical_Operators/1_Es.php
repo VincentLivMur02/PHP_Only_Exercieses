@@ -14,6 +14,6 @@ Esercizio 1:
 $username = "admin";
 $password = "12345";
 
-$check = $username && $password; 
+$check = $username === "admin" && $password === "12345"; 
 
-echo "The user has wrote the dates? " . $check; # 1 ( true )  
+echo "The user has wrote the dates correctly? " . $check; # 1 ( true )  
