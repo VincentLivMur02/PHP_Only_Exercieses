@@ -10,9 +10,9 @@ Esercizio 9:
 
 */
 
-$year = 2024;
+$year = 2025;
 
-if ( $year % 4 ) { # divisible by 4
+if ( ($year % 4 && $year % 100 !== 0) || ($year % 400 === 0)) { # divisible by 4, not divisible by 100 and 400
     echo "The $year is a leap year"; # first case
 } else {
     echo "The $year isn't a leap year"; # last case

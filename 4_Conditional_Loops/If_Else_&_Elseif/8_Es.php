@@ -9,14 +9,14 @@ Esericizio 8:
 
 */
 
-$num = 10;
+$num = 1;
 
-if ( $num % 2 ) {
+if ( $num % 2 === 0) { 
    echo "$num is even";
 } else {
    echo "$num is odd";
 }
 
-// cosa non va? 
+
 
 
