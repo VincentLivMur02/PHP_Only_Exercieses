@@ -13,15 +13,15 @@ Esercizio 8:
 $lifePoints = 100;
 $pointsExperience = 50;
 
-# action in the game that causes you to lose health points but earns you experience points
-$spinningPunch =  ( $lifePoints  -= 10 ) && ( $pointsExperience += 20 );
-
-echo "Points now : $lifePoints, $pointsExperience </br>";
+echo "Points then : $lifePoints, $pointsExperience </br>";
+// mandare a schermo i punti precedenti senza far cambiare le variabili appena inserite = salvare in nuove variabili
+$lifePoints -= 10;
+$pointsExperience += 20; 
+echo "Points now : $lifePoints, $pointsExperience";
 
 # i use -= for subtract the value of $lifePoints variable = 100 to lose 10 points of life
 # and i use += for add the value of $pointsExperience variable = 50 to assign 20 more points of experience
 
-// dubbi... come mandare a schermo i punti precedenti senza far cambiare le variabili appena inserite??
 
 
 

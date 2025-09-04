@@ -12,13 +12,13 @@ Esercizio 2:
 
 # prime variabili 
 $username = "user1";
-$password = "pass123";
+$password = "password123";
 # altre due variabili 
 $input_username = "user1";
 $input_password = "password123";
 
 # verifica delle credenziali corrette
-if ($username && $input_username === "user1" && $password && $input_password === "password123") {
+if ($username === $input_username && $password === $input_password ) {
     echo "Access permitted";
 } else {
     echo "Access denied";

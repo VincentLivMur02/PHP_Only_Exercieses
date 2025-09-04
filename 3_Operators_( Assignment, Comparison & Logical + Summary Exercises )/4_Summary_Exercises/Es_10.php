@@ -10,12 +10,7 @@ Esercizio 10:
 
 */
 
-$number = 0;
+$number = 7;
 
-if ($number > 10 || $number != 5) {
-    echo "True";
-} else {
-    echo "False";
-}
-
-// dubbi... il risultato sarà sempre vero... come risolvo
+echo ($number > 10 || $number != 5);
+    

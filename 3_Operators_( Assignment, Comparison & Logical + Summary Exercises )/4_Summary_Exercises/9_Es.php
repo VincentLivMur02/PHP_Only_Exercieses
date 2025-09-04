@@ -10,17 +10,17 @@ Esercizio 9:
 
 */
 
-$vote = 100;
-$presences = 48;
+$vote = 34;
+$presences = 5;
+$minimumPresencies = ceil( ( 50 * 75 ) / 100 ) ; // arrotondare il risultato
 
-# student promosion check 
-if ( $vote >= 18 && $presences >= ( 50 * 75 ) / 100 ) {
+# student promossion check 
+if ( $vote >= 18 && $presences >= $minimumPresencies ) {
     echo "The student has promoted!";
 } else {
     echo "The student hasn't promoted!";
 }
 
-// dubbi sui calcoli delle presenze ... 
 
 
 

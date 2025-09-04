@@ -17,13 +17,14 @@ $IVATax = 22; # IVA del 22%
 
 $discountPriceProduct = ($priceProduct * $saleProduct) / 100; # calcolo dello sconto del 15% sul prodotto di 50 = 7.5
 $prodDiff = $priceProduct - $discountPriceProduct; # verifica della differenza del prodotto: 42.5 + 7.5 = 50
-$productWithIVATax = ($discountPriceProduct * 100) / 122; # aggiunta l'IVA al prezzo già scontato = 7.5 * 100 / 122 = 6.1
-$totalDiscountPrice = $prodDiff + $productWithIVATax; # ( prezzo iniziale ) + IVA = 42.5 + 6.1 = 48.6 
+$productWithIVATax = $prodDiff * ($IVATax / 100); # aggiunta l'IVA al prezzo già scontato
+$finalPrice = $prodDiff + $productWithIVATax;
 
 echo "The discount of ". $saleProduct . "% of " . $priceProduct . "€ is = " . $discountPriceProduct . "€", "</br>";
 echo "The difference is = " . $prodDiff ."€ . Infact $prodDiff + $discountPriceProduct is = $priceProduct</br>";
 echo "When we added the IVA tax, the result is = " . $productWithIVATax, "</br>";
-echo "Finally the total is = " . $totalDiscountPrice . "€";
+echo "The final price is : ". $finalPrice . "€";
 
-// Dubbi ... + come togliere il "periodico" nei numeri con la virgola
+
+
 
