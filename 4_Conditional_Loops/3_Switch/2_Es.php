@@ -23,19 +23,19 @@ Esercizio 2:
 $vote = 1;
 
 switch ( $vote ) {
-    case ($vote === 5):
+    case 5:
         echo "Exellent";
         break;
-    case ($vote === 4);
+    case 4;
         echo "Good";
         break;
-    case ($vote === 3);
+    case 3;
         echo "Sufficient";
         break;
-    case ($vote === 2);
+    case 2;
         echo "Insufficient";
         break;
-    case ($vote === 1);
+    case 1;
         echo "Seriously insufficent";
         break;
     default:
