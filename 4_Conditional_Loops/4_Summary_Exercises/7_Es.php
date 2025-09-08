@@ -15,7 +15,7 @@ $totalShop = 151;
 $shopDiscount = 10; 
 $fidelityCard = true;
 
-$messageForCustomer = ( $totalShop > 150 && $fidelityCard === true) ? 
+$messageForCustomer = ( $totalShop > 150 || $fidelityCard === true) ? 
 "The customer has entitled to a discount of 10%. <br>
 Fidelity card: $fidelityCard. <br> 
 Total then: " . $totalShop . "€. <br> 

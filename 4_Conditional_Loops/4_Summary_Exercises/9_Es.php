@@ -13,17 +13,16 @@ Esercizio 9:
 
 */
 
-$pointsExperience = 900;
-$newlevel = $level ?? "<b>Dummy</b>"; # insert a <b> tag
+$pointsExperience = 433;
+$level = null;
+$level = $level ?? "Beginner";
 
 if ($pointsExperience >= 100 && $pointsExperience <= 500) {
-    echo "Level: " . $newlevel = $level ?? "<b>Intermediate</b>";
-} elseif ($pointsExperience <= 501 && $pointsExperience >= 1000) {
-    echo "Level: " . $newlevel = $level ?? "<b>Advanced</b>";
+    $level = "<b>Intermediate</b>";
+} elseif ($pointsExperience >= 501 && $pointsExperience <= 1000) {
+    $level = "<b>Advanced</b>";
 } elseif ($pointsExperience > 1000) {
-    echo "Level: " . $newlevel = $level ?? "<b>Expert</b>";
+    $level = "<b>Expert</b>";
 } else {
-    echo "This level doesn't exist!";
+    echo "Level: " . $level;
 }
-
-// dubbi .. 

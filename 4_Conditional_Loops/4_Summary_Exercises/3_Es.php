@@ -24,28 +24,20 @@ $playerAction = "Treat";
 # curare = Treat 
 # difesa = Defence
 
-switch ($lifePoints) {
-    case $playerAction === "Attack":
-        echo "You choose the action <b>'$playerAction'</b>. 
-       Oh Nooo! Now'll lose 15 points of life : <br> 
-        Life points before: $lifePoints <br>
-        Life points after: " . $lifePoints - 15;
-    break;
-    case $playerAction === "Defence":
-        echo "You choose the action <b>'$playerAction'</b>. <br>
-        Life points before: $lifePoints <br>
-        Life points after: $lifePoints <br>
-        Nothing to change. SURVIVE!!";
-    break;
-    case $playerAction === "Treat":
-        echo "You choose the action <b>'$playerAction'</b>. 
-        Good, you'll receive 15 points of life : <br> 
-        Life points before: $lifePoints <br>
-        Life points after: " . $lifePoints + 20;
-    break; 
+switch ($playerAction) { 
+    case "Attack":
+        $lifePoints -= 15; 
+        echo "You chose the action 'Attack'. You'll lose 15 life points. New life points: " . $lifePoints;
+        break;
+    case "Defence":
+        echo "You chose the action 'Defence'. Your life points: " . $lifePoints;
+        break;
+    case "Treat":
+        $lifePoints += 20;
+        echo "You chose the action 'Treat'. You'll gain 20 life points. New life points: " . $lifePoints;
+        break;
     default:
-        echo "You don't choose any action!";
+        echo "Invalid action.";
+        break;
 }
-
-
 

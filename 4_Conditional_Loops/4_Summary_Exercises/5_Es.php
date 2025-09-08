@@ -13,17 +13,13 @@ Esercizio 5:
 
 $annualSalary = 25600;
 $hoursOfWork = 2000;
-$bonus = 15;
-$newBonus = 5;
 
-if ($annualSalary > 50000 && $hoursOfWork === 2000) {
-    echo "The employee'll receved a bonus of 15% on his annual salary. <br>
-    Annual salary then: $annualSalary" . "€. <br>
-    Annual salary now: " . $annualSalary = ($annualSalary * $bonus) / 100 + $annualSalary . "€.";
+if ($annualSalary > 50000 && $hoursOfWork >= 2000) {
+    $bonus = ($annualSalary * 15) / 100;
+    echo "The employee has entitled to a 15% discount. The bonus is: " . $bonus . "€.";
 } elseif ($annualSalary > 25000) {
-    echo "The employee'll receved a bonus of 5% on his annual salary. <br>
-    Annual salary then: $annualSalary" . "€. <br>
-    Annual salary now: " . $annualSalary = ($annualSalary * $newBonus) / 100 + $annualSalary . "€.";
+    $bonus = ($annualSalary * 5) / 100;
+    echo "The employee'll receive a 5% discount. The bonus is: " . $bonus . "€.";
 } else {
-    echo "The employee won't receved a bonus for his annual salary!";
+    echo "The employee hasn't entitled to a discount.";
 }

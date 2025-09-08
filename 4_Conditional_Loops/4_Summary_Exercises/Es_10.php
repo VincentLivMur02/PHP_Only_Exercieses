@@ -19,7 +19,7 @@ $age = 66;
 
 if ( $age < 13 ) {
     echo "The ticket cost 5€.";
-} elseif ( $age > 13 && $age < 65 ) {
+} elseif ( $age >= 13 && $age <= 65 ) {
     echo "The ticket cost 10€.";
 } elseif ( $age > 65 ) {
     echo "The ticket cost 7€.";

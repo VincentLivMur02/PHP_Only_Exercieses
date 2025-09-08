@@ -10,25 +10,21 @@ Esercizio 2:
 
 */
 
-$shopOf200 = 200;
-$discountOf20 = 20;
-$shopOf100 = 100;
-$discountOf10 = 10;
 $VIPMember = false;
 $totalShop = 400;
 
-if ( $totalShop > $shopOf200 && $VIPMember === true ) {
+if ( $totalShop > 200 && $VIPMember ) {
     echo "The client has entitled to a discount of 20%. <br> 
     VIP member card: " . $VIPMember . "<br> 
     Total shop: " . $totalShop . "€.<br> 
-    Discount: " . $totalShop * $discountOf20 / 100 . "€. 
-    Total now: " . $totalShop - ( $totalShop * $discountOf20 / 100 ) . "€.";
-} elseif ( $totalShop > $shopOf100) { 
+    Discount: " . $totalShop * 20 / 100 . "€. 
+    Total now: " . $totalShop - ( $totalShop * 20 / 100 ) . "€.";
+} elseif ( $totalShop > 100) { 
     echo "The client has entitled to a discount of 10%. <br>
     VIP member card: " . $VIPMember . "<br> 
     Total shop: " . $totalShop . "€.<br> 
-    Discount: " . $totalShop * $discountOf10 / 100 . "€.<br> 
-    Total now: " . $totalShop - ( $totalShop * $discountOf10 / 100 ) . "€.";
+    Discount: " . $totalShop * 10 / 100 . "€.<br> 
+    Total now: " . $totalShop - ( $totalShop * 10 / 100 ) . "€.";
 } else {
     echo "The client hasn't entitled to a discount!";
 }
