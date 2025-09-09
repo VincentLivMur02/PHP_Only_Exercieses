@@ -18,4 +18,4 @@ while ($numbers <= 20) {
     $numbers++; # increment of 1, if we doesn't insert.. the code explode in a infinite loop
 }
 
-// perchè non visualizzo il n.20?
+

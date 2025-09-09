@@ -11,7 +11,7 @@ Esercizio 1:
 
 $i = 0;
 
-while ($i < 10) {
+while ($i <= 10) {
     $i++; # i need it to prevent infinite loops
     echo $i;
 }
