@@ -12,10 +12,12 @@ Esercizio 9:
 */
 
 $userMoney = 50;
-$round;
+$round = 0;
 
 do {
-    $userMoney--;
-} while ($round < 10);
+    $userMoney -= 10;
+    $round++;
+    echo "Round " . $round . ": you have " . $userMoney . " euros left.<br>";
+} while ($userMoney > 0);
 
-// dubbi
+echo "The game is over. You have played " . $round . " rounds and you have " . $userMoney . " euros left.";

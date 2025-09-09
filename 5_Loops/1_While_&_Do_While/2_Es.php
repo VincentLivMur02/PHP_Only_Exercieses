@@ -13,15 +13,15 @@ Esercizio 2:
 */
 
 $password = "test";
+$inputPassword = "Wrong"; # simulation of a wrong password
 $attempts = 0;
 
 
-while ($attempts < 3) { # 3 attempts to verify the password
-    echo $attempts . "<br>";
+while ($inputPassword !== $password && $attempts < 3) { # 3 attempts to verify the password if it's correct
     $attempts++;
 }
 
-echo "Accsess effetuated in $attempts attempts.";
+echo "Accsess effetuated in " . $attempts . " attempts.";
 
-// dubbi..
+
 

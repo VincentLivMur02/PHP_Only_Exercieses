@@ -10,11 +10,11 @@ Esercizio 5:
 
 */
 
-$count = 0;
+$count = 10;
 
-while ($count > 10) {
+while ($count >= 1) {
     echo $count;
     $count--;
 }
 
-// dubbi
+

@@ -9,11 +9,11 @@ Esercizio 6:
 
 */
 
-$userVote = 5;
+$userVote = 0;
 
 do {
-    $userVote++;
-    echo $userVote;
-} while ($userVote > 0 && $userVote < 11);
+    $userVote = rand(1, 15);
+    echo "You have entered the vote: " . $userVote . "<br>";
+} while ($userVote > 10 || $userVote < 1);
 
-// dubbi 
+echo "You have entered a valid vote: " . $userVote;

@@ -12,10 +12,14 @@ Esercizio 10:
 
 $salary = 3500;
 $goal = 10000;
+$years  = 0;
 
-while ($salary) {
-    echo $salary * 10 / 100;
-    $salary++;
+while ($salary < $goal) {
+    $increaseSalary = $salary * 10 / 100;
+    $salary += $increaseSalary;
+    $years++;
 }
+
+echo "It will take " . $years . " years to reach the goal.";
 
 // dubbi 

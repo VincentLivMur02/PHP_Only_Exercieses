@@ -10,13 +10,14 @@ Esercizio 4:
 
 */
 
-$webSiteUsers = 100;
-$monthSiteUsers = $webSiteUsers * 2;
+$users = 100;
+$months = 0;
 
-while ($monthSiteUsers < 5) {
-     $monthSiteUsers++;
+while ($users < 500) {
+     $users *= 2; # double the users
+     $months++; # increment the counter of the months
 }
 
-echo $monthSiteUsers;
+echo "It will take " . $months . " months to reach 500 users.";
 
-// dubbi
+

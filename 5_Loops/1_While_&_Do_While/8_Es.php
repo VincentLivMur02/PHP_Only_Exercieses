@@ -11,11 +11,15 @@ Esercizio 8:
 */
 
 $capital = 1000;
+$years = 0;
 
-while ($capital < 3) {
-    echo $capital * 5 / 100;
-    $capital++;
+while ($capital < 2000) {
+    $interests = $capital * 5 / 100;
+    $capital += $interests;
+    $years++;
 }
+
+echo "It will take " . $years . " years to exceed 2000€.";
 
 // dubbi
 

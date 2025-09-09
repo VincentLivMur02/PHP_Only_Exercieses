@@ -11,12 +11,10 @@ Esercizio 7:
 
 $numbers = 0;
 
-while ($numbers < 20) {
+while ($numbers <= 20) {
     if ($numbers % 2 === 0) { # need the modulo symble % to verify if the number is even or odd
-        echo "$numbers are even"; 
-    } else {
-        echo "$numbers are odd";
-    }
+        echo $numbers . " "; # stamp only even numbers
+    } 
     $numbers++; # increment of 1, if we doesn't insert.. the code explode in a infinite loop
 }
 

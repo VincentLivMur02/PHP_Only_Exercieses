@@ -10,15 +10,21 @@ Esercizio 3:
 
 */
 
-$penny = "head";
+$result = "head";
 $attempts = 0;
 
-while ($attempts < 5 && $penny === "head") {
-    echo $attempts;
+while ($result !== "head") {
     $attempts++;
+
+    $result = (rand(0, 1) === 0 ) ? "head" : "cross";
+
+    if ($attempts === 3) {
+        $result = "head";
+    }
+    echo "Attempts " . $attempts . ": " . $result . "<br>";
 }
 
-echo "Attempts needed: $attempts";
+echo "Attempts needed: " . $attempts;
 
-// dubbi...
+
 
