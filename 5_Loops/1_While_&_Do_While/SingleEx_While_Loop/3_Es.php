@@ -10,15 +10,11 @@ Esercizio 3:
 
 */
 
-$input = "ottootto";
-$attempts = 0;
-
-while ($attempts < 10) {
-    echo $attempts;
-    if ($input!= 8) {
-        echo "The input $input has 8 characters: <b>$input</b>";
-    }
-    $attempts++;
+$password = "hello"; // Let's simulate the password
+$min_length = 8;
+while (strlen($password) < $min_length) {
+    echo "The password is too short, it must have at least " . $min_length . " characters. Current: " . strlen($password) ."<br>";
+    // Here we would simulate a new input
+    $password = "long_password";
 }
-
-// dubbi
+echo "Valid password. Length: " . strlen($password);

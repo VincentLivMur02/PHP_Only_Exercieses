@@ -13,8 +13,11 @@ Esercizio 8:
 $a = 0;
 $b = 1;
 
-
-while ($a < 10) {
-    $a++;
-    echo $a + $b + $a, PHP_EOL, "<br>"; # added PHP_EOL, "<br>" for to start a new line 
-} 
+$counter = 0;
+while ($counter < 10) {
+    echo $a . "<br>";
+    $next = $a + $b;
+    $a = $b;
+    $b = $next;
+    $counter++;
+}

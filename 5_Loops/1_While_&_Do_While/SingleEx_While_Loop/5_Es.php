@@ -10,12 +10,11 @@ Esercizio 5:
 
 */
 
-$grades = 50;
-
-while($grades >= 10){
-    echo $grades;
-    $grades+=10;
+$temperature = 50;
+$minutes = 0;
+while ($temperature < 180) {
+    $temperature += 10;
+    $minutes++;
 }
-
-// dubbi...
+echo "It took " . $minutes . " minutes to reach 180 degrees.";
 

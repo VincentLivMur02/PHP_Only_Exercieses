@@ -11,13 +11,8 @@ Esercizio 6:
 */
 
 $wallet = 100;
-
-
-while ($wallet > 0) {
-    $wallet-=15;
-    echo $wallet . "<br>";
+while ($wallet >= 15) { // the cycle continues until the wallet has at least 15 euros
+    $wallet -= 15;
+    echo "You have spent 15 euros. You have left: " . $wallet . "€<br>";
 }
-
-echo "In my wallet i have: " . $wallet . "€";
-
-// dubbi
+echo "You have less than 15 euros. You have left: " . $wallet . "€";

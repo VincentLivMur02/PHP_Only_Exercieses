@@ -12,14 +12,14 @@ Esercizio 7:
 
 */
 
+$saved = false;
 $attempts = 0;
-
-while ($attempts < 4) {
-    if ($attempts <= 3) {
-        echo "Failed";
-    }
+while (!$saved) { // The loop continues until the condition $saved is false.
     $attempts++;
-    echo $attempts;
+    if ($attempts === 4) {
+        $saved = true;
+        echo "Attempt " . $attempts . ": Data saved successfully!";
+    } else {
+        echo "Attempt " . $attempts . ": Saving failed.<br>";
+    }
 }
-
-echo "The last one attempt $attempts is Correct";

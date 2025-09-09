@@ -10,13 +10,11 @@ Esercizio 4:
 
 */
 
-$throws = 0;
-
-while ($throws < 6) {
-    $throws++;
-    echo $throws . "</br>";
+$dice = 0;
+$rolls = 0;
+while ($dice !== 6) {
+    $dice = rand(1, 6); // Generates a random number from 1 to 6
+    $rolls++;
+    echo "Roll " . $rolls . ": the result is " . $dice . "<br>";
 }
-
-echo "We need : " . $throws . " throws";
-
-// dubbi...
+echo "It took " . $rolls . " rolls to get a 6.";

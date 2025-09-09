@@ -15,10 +15,9 @@ $num = 1;
 
 # need to verify the sum if whether it exceeds 50 or not
 
-while ($num < $sum) { 
-    $result = $sum += $num;
-    $result++;
-    echo $result;
+while ($num <= 50) { 
+    $sum += $num;
+    $num++;
 }
 
-// dubbi
+echo "The final value is: " . $sum;
