@@ -21,5 +21,5 @@ while ($capital < 2000) {
 
 echo "It will take " . $years . " years to exceed 2000€.";
 
-// dubbi
+
 
