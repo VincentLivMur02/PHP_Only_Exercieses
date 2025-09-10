@@ -10,9 +10,9 @@ Esercizio 2:
 */
 
 $prices = [15.50, 23.00, 4.25, 10.75];
+$total_sum = 0; # External variable for the sum
 
-foreach ( $prices as $price ){
-    echo $price;
+foreach ($prices as $price){
+    $total_sum += $price; # Add the current price to the sum
 }
-
-// perchè ripete per 4 volte il messaggio ?
+echo "The total sum is: " . $total_sum . "€."; # Print only once

@@ -14,7 +14,6 @@ $counter = 0;
 
 # creation of a foreach loop 
 foreach ($arrayCar as $cars) {
-    echo $counter += $cars;
+    $counter++; # Increases the counter with each iteration
 }
-
-// dubbi
+echo "The array contains " . $counter . " elements.";
