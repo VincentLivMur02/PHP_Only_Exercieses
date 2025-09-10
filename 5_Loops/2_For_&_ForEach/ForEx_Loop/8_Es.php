@@ -9,9 +9,8 @@ Esercizio 8:
 
 */
 
-$numRaised = 2 ** 8;
 
-for ($i = 0; $i < 8; $i++) {
-    echo $numRaised ;
+for ($i = 1; $i <= 8; $i++) {
+    $power = 2 ** $i;
+    echo "2 raised to the power of " . $i . " is equal to: " . $power . "<br>";
 }
-

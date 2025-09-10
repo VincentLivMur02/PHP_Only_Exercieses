@@ -10,11 +10,11 @@ Esercizio 10:
 
 */
 
-$salaryEmployee = 20000;
-$years = 5;
+$salary = 20000;
+$percentage_increase = 0.03; // 3%
 
-for ($i = 0; $i <= 5; $i++) {
-    echo (($salaryEmployee * 3 )/ 100 + 5) . "<br>";
+for ($year = 1; $year <= 5; $year++) {
+    $increase = $salary * $percentage_increase;
+    $salary += $increase;
+    echo "Salary for year " . $year . ": " . round($salary, 2) . "€.<br>";
 }
-
-// dubbi 

@@ -13,10 +13,19 @@ Esercizio 7:
 
 */
 
-$date = "*";
-
-for ($i = 0; $i < 5; $i++){
-    if ( $date === "*" ) {
-        echo "<br>" . $date + $date;
-    }
+$asterisks = "*";
+for ($i = 0; $i < 5; $i++) {
+    echo $asterisks . "<br>";
+    $asterisks .= "*"; // Concatenates another asterisk to the end of the string
 }
+
+/*
+
+for ($row = 1; $row <= 5; $row++) {
+    for ($column = 1; $column <= $row; $column++) {
+        echo "*";
+    }
+    echo "<br>";
+}
+
+*/
