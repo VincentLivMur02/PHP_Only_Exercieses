@@ -11,13 +11,10 @@ Esercizio 10:
 
 */
 
-$totalPrice = 100;
-$round = 5;
-
+$price = 100;
 do {
-    $totalPrice -= $round;
-    $totalPrice--;
-    echo "Final price is: " . $totalPrice . "€.";
-} while($totalPrice);
+    $price -= 5;
+    echo "The price has dropped to: " . $price . "£.<br>";
+} while ($price > 70);
 
-// dubbi 
+echo "The final price is: " . $price . "£.";

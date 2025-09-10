@@ -9,14 +9,13 @@ Esercizio 5:
 - Stampa quanti tentativi ci sono voluti.
 
 */
-
-$num = 43;
+$number = 0;
+$attempts = 0;
 
 do {
-    $num = $num > 1 && $num < 100;
-    $num++;
-    echo $num;
-} while ($num < 4);
+    $number = rand(1, 100); // Generate a random number
+    $attempts++; // Increment the counter
+    echo "Attempt " . $attempts . ": the number is " . $number . "<br>";
+} while ($number <= 90);
 
-
-// dubbi
+echo "It took " . $attempts . " attempts to get a number greater than 90.";

@@ -10,15 +10,13 @@ Esercizio 9:
 
 */
 
-$launch = 4;
+$result = "tails";
+$attempts = 0;
 
 do {
-    $penny = "6";
-    if ($penny === "head") {
-        echo "You launch the penny $launch times";
-    }
-    $launch++;
-    echo $launch;
-} while ($launch < 4);
+    $attempts++;
+    $result = (rand(0, 1) === 0) ? "heads" : "tail"; // Simulate the toss
+    echo "Toss " . $attempts . ": the result is " . $result . "<br>";
+} while ($result !== "heads");
 
-// dubbi 
+echo "It took " . $attempts . " tosses to get “heads”.";

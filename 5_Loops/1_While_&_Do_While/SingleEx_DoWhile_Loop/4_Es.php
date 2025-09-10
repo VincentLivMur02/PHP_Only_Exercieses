@@ -10,16 +10,13 @@ Esercizio 4:
 
 */
 
-$option = "Pizza";
-
+$menuChoice = 0; // Simulate the user's choice
 do {
-    if ($option === "Pizza" || $option === "Pasta" || $option === "Salad" ) {
-        echo "The option $option is correct";
-    }
-    $option++;
-    echo $option;
-} while ($option < 4);
+    // Here we simulate the user's choice
+    $menuChoice = rand(1, 5); // Generate a random number between 1 and 5 to simulate the error
+    echo "You have chosen option " . $menuChoice . ". <br>";
+} while ($menuChoice < 1 || $menuChoice > 3);
 
-// dubbi 
+echo "Valid choice: " . $menuChoice . ".";
 
 

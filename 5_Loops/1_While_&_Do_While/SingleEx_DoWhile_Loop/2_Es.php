@@ -10,9 +10,13 @@ Esercizio 2:
 
 */
 
-$wallet = 100;
+$balance = 100;
+$withdrawals = 0;
 
 do {
-    $wallet -= 20;
-    echo "You have less than 20 euros. You have left: " . $wallet . "€";
-} while ($wallet >= 20);
+    $balance -= 20; // Withdraw 20 euros
+    $withdrawals++; // Count the withdrawal
+    echo "You have withdrawn. The current balance is: " . $balance . "€.<br>";
+} while ($balance >= 20); // The cycle continues as long as the balance is >= 20
+
+echo "Withdrawals made: " . $withdrawals . ". Final balance: " . $balance . "€.";
