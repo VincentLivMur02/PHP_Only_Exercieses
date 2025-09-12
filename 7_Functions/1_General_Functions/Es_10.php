@@ -9,5 +9,9 @@ Esercizio 10:
 */
 
 function diceThrower() { # no params
-
+    $result = rand(1, 6);
+    echo "You rolled a " . $result;
+    return $result; // The function returns the result
 }
+
+diceThrower();

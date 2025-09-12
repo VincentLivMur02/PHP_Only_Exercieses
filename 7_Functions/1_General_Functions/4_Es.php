@@ -9,20 +9,24 @@ Esercizio 4:
 
 */
 
-function mediaCalc($num = 275, $num4 =1, $num5 = 15) {
-    $numArg = func_num_args(); # Local scope = getting NUM of total arguments
-    echo "Number of argumets: $numArg <br>";
-    
-    $argumentsList = func_get_args(); # Local scope = getting ONLY the arguments
-    for ($arguments = 0; $arguments < $numArg; $arguments++) { # create a for loop to "increment" and stamp the arguments in new lines
-        echo "Argument $arguments is: " . $argumentsList[$arguments] . "<br>"; 
+function calculateAverage() {
+    $votes = func_get_args(); // Array with all votes
+    $numberOfVotes = func_num_args(); // Total number of votes
+    $sum = 0;
+
+    foreach ($votes as $vote) {
+        $sum += $vote; // Add each vote
     }
 
-    $addictionOfMedia = $num1 + $num2 + $num3 + ;
-    $media = $addictionOfMedia / $numArg;
+    if ($numberOfVotes > 0) {
+        $average = $sum / $numberOfVotes;
+        echo "The average of the votes is: " . $average;
+    } else {
+        echo "No votes entered.";
+    }
 }
 
-mediaCalc($addictionOfMedia, $media);
+calculateAverage(8, 7, 9, 6); // Output: The average of the votes is: 7.5
 
 
 

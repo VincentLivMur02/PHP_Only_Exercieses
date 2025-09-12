@@ -9,10 +9,18 @@ Esercizio 3:
 
 */
 
-function calculator($num1, $num2){
-    echo $num1 / $num2;
+function calculate($num1, $num2, $operation) {
+    $result = 0;
+    if ($operation === "+") {
+        $result = $num1 + $num2;
+    } elseif ($operation === "-") {
+        $result = $num1 - $num2;
+    } elseif ($operation === "*") {
+        $result = $num1 * $num2;
+    } elseif ($operation === "/") {
+        $result = $num1 / $num2;
+    }
+    return $result;
 }
 
-calculator(15, 5);
-
-// dubbi.. come inserisco l'operatore
+echo calculate(15, 5, "/"); // Output: 3

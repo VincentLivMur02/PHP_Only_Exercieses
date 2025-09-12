@@ -9,12 +9,11 @@ Esercizio 5:
 
 */
 
-function countDown($num = 10){
-    for ($num = 10; $num >= 1; $num-- ) {
-        echo $num. "<br>";
+function countDown($num) {
+    for ($i = $num; $i >= 1; $i-- ) {
+        echo $i. "<br>";
     }
 }
 
-countDown();
+countDown(10);
 
-// dubbi...
