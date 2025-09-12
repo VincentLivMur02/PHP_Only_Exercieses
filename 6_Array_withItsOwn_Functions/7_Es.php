@@ -9,13 +9,13 @@ Esercizio 7:
 
 */
 
-$student = ["Jhon", 54, "NewYork"];
+$student = ["name" => "John", "age" => 54, "city" => "New York"];
 
 foreach ($student as $newStudent) {
     $newStudent = array_slice($student, 0,1);
-    var_dump($newStudent);
+    echo $student["name"] . "<br>";
 }
 
-// dubbi.. 
+
 
 

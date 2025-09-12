@@ -16,6 +16,6 @@ $students = [
 ];
 
 # array in descending order only for values ( votes )
-rsort($students);
+arsort($students);
 var_dump($students);
 
