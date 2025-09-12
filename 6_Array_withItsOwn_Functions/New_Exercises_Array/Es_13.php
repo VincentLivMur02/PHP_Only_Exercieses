@@ -11,15 +11,16 @@ Esercizio 13:
 */
 
 $cart = [
-    "Pasta Barilla" => 2, 
-    "Milk Zymil" => 3.50, 
-    "Pizza Don Gino's" => 10.60,
-    "Yougurt Greco" => 2.80,
-    "Cheese Parmigiano" => 40 
+    "Barilla pasta" => 2,
+    "Zymil milk" => 3.50,
+    "Don Gino's pizza" => 10.60,
+    "Greek yoghurt" => 2.80,
+    "Parmigiano cheese" => 40
 ];
 
-foreach($cart as $product => $price) {
-    if (rsort($price) === $price) {
-        var_dump($price);
-    }
+$total_price = 0; // External counter
+
+foreach ($cart as $price) {
+    $total_price += $price; // Add each price to the total
 }
+echo "The total cost is: " . $total_price . "€.";                  
