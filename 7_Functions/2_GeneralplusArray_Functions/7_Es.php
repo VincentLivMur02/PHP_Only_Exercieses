@@ -9,9 +9,10 @@ Esercizio 7:
 
 */
 
-function orderVotes($students = ["Peter" => 23, "Maxuel" => 26, "Barbara" => 30]) {
-    rsort($students); # indexies are unchanged
-    print_r($students);
+function sortVotes($students) {
+    arsort($students); # indexies are unchanged
+    return $students;
 }
 
-orderVotes();
+$ordered = sortVotes(["Peter" => 23, "Maxuel" => 26, "Barbara" => 30]);
+print_r($ordered);

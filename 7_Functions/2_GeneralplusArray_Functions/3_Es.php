@@ -9,13 +9,15 @@ Esercizio 3:
 
 */
 
-function oddFilter($arr) {
-    foreach ($arr as $numbers => $num){
+function filterEvenNumbers($arr) {
+    $newArray = []; // Create an empty array
+    foreach ($arr as $num){
         if ($num % 2 == 0) {
-            print_r($num);
+            $newArray[] = $num; // Add the even number to the new array
         }
-    }  
+    }
+    return $newArray;
 }
-
-oddFilter([1,2,3,4,5,6,7,8,9,10]);
+$evenNumbers = filterEven([1,2,3,4,5,6,7,8,9,10]);
+print_r($evenNumbers);
 

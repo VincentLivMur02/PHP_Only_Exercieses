@@ -9,11 +9,13 @@ Esercizio 10:
 
 */
 
-function discount($arrPrices = [38.90, 40, 874.00, 1000, 5], $discount = 10){
+function applyDiscount($arrPrices, $discount) {
+    $newArray = [];
     foreach($arrPrices as $price){
-        print_r($price * $discount / 100);
+        $discountedPrice = $price - ($price * $discount / 100);
+        $newArray[] = $discountedPrice;
     }
+    return $newArray;
 }
-discount();
-
-// dubbi
+$discountedPrices = applyDiscount([38.90, 40, 874.00, 1000, 5], 10);
+print_r($discountedPrices);

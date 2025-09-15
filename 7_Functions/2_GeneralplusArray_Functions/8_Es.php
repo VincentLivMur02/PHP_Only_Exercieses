@@ -10,10 +10,12 @@ Esercizio 8:
 */
 
 
-function stampList($arr = ["Apple", "Banana", "Hananas", "Mango", "Cherrys", "Strawberrys"]) {
+function stampList($arr) {
+    echo "<ul>";
     foreach ($arr as $fruits) {
-        echo "<ul>$fruits</ul><br>";
+        echo "<li>" . $fruits . "</li>";
     }
+    echo "</ul>";
 }
 
-stampList();
+stampList(["Apple", "Banana", "Hananas", "Mango", "Cherrys", "Strawberrys"]);

@@ -8,9 +8,13 @@ Esercizio 4:
 
 */
 
-function reverseArr($nameArr) {
-    krsort($nameArr); # sort the array by the keys 
-    print_r($nameArr);
+function reverseArray($arr) {
+    $newArray = [];
+    $length = count($arr);
+    for ($i = $length - 1; $i >= 0; $i--) {
+        $newArray[] = $arr[$i];
+    }
+    return $newArray;
 }
-
-reverseArr(["Olivia", "Sophia", "Emily", "Jacob", "Michael"]);
+$reversed = reverseArray(["Olivia", "Sophia", "Emily", "Jacob", "Michael"]);
+print_r($reversed);
