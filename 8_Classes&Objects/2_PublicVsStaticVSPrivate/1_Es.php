@@ -29,4 +29,4 @@ class Counter {
 $myCounter = new Counter();
 $myCounter->increment();
 $myCounter->increment();
-echo $myCounter->getCounter(); // Output: 2
+echo $myCounter->getCounter();
