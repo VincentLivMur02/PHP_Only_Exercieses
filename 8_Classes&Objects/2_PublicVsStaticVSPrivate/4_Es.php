@@ -13,38 +13,31 @@ Esercizio 5:
 
 */
 
-class Rectangle {
-    # properties
+class Rectangle  {
     public $base;
     public $height;
-    private $color;
+    private $colour;
 
-    # methods
-    public function __construct($base, $height, $color) {
+    public function __constructor($base, $height) {
         $this->base = $base;
         $this->height = $height;
-        $this->color = $color;
     }
 
-    public function calculateArea() {
-        echo "The area of the rectangle is: " . $this->base * $this->height . "cm";
+    public function setColour($colour) {
+        $this->colour = $colour;
     }
 
-    public function setColor() {
-        $this->color = "Red";
+    public function getColour() {
+        return $this->colour;
     }
 
-    public function getColor() {
-        setColor();
-    }
-
-    public static function describe() {
-        echo "This is a class to create an object rectangle!";
-    }
+public static function describe() {
+    echo "This is a class for creating Rectangle objects.";
+}
 }
 
-$newRect = new Rectangle(10, 30, $color);
-$newRect->calculateArea();
-$newRect->setColor();
-$newRect->getColor();
-Rectangle::describe();
+$newRect = new Rectangle(10, 30);
+$newRect->setColour("blue");
+echo "The colour of the rectangle is: " . $newRect->getColour(); // Output: The colour of the rectangle is: blue
+echo "<br>";
+Rectangle::describe(); // Output: This is a class for creating Rectangle objects.

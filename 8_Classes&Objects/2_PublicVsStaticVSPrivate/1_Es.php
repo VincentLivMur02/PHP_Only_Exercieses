@@ -10,26 +10,23 @@ Esercizio 1:
 
 */
 
-class Count {
+class Counter {
+    private $counter = 0;
 
-    private $count = 0;
-
-    public function __construct($count) {
-        $this->count = $count;
+    public function __construct() {
+        // We do not pass parameters, the counter starts from 0
     }
 
     public function increment() {
-        for($count = 0; $count > 1; $count++){
-            echo $count;
-        };
+        $this->counter++;
     }
 
-    public function getCount() {
-        echo "This is the count: ". $this->count;
+    public function getCounter() {
+        return $this->counter;
     }
 }
 
-$newCount = new Count(2999);
-
-# private prop
-echo $newCount->getCount();
+$myCounter = new Counter();
+$myCounter->increment();
+$myCounter->increment();
+echo $myCounter->getCounter(); // Output: 2

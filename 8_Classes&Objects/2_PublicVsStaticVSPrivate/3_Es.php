@@ -10,35 +10,23 @@ Esercizio 3:
 
 */
 
-class Count {
+class Counter {
+    private $account;
+    public static $numInstances = 0; // Static declaration
 
-    private $count = 0;
-    static $numIstances = 0;
-
-    public function __construct($count, $numIstances) {
-        $this->count = $count;
-        $this->numIstances = $numIstances++;
+    public function __construct() {
+        $this->account = 0;
+        self::$numInstances++; // Increment the static variable
     }
 
-    public function increment() {
-        for($count = 0; $count > 1; $count++){
-            echo $count;
-        };
-    }
-
-    public function getCount() {
-        echo "This is the count: ". $this->count;
-    }
-
-    public static function printIstances() {
-        echo $numIstances;
+    public static function printInstances() {
+    echo "Number of instances created: " . self::$numInstances;
     }
 }
 
-$newCount = new Count(2999);
+$c1 = new Counter();
+$c2 = new Counter();
+$c3 = new Counter();
 
-# private prop
-echo $newCount->getCount();
-# static prop
-Count::printIstances();
+Counter::printInstances(); // Output: Number of instances created: 3
 
