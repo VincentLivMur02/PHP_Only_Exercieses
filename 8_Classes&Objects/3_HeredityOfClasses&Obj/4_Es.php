@@ -41,9 +41,22 @@ class Product {
         return $this->price;
     }
 
-    // public static calcMediaPrices($product = []) {
-        // ;
-    // }
+    # Static method that accepts an array of objects
+    public static function calcMediaPrices($products = []) {
+        $totalPrice = 0;
+        
+        foreach ($products as $product) {
+            $totalPrice += $product->getPrice();
+        }
+        
+        $numberOfProducts = count($products);
+        
+        if ($numberOfProducts > 0) {
+            return $totalPrice / $numberOfProducts;
+        } else {
+            return 0;
+        }
+    }
 }
 
 # child class extends parent one
@@ -57,9 +70,13 @@ class DiscountProd extends Product {
 
     # override 
     public function getPrice() {
-        return $this->price - $this->discount;
+        return parent::getPrice() - $this->discount;
     }
-
 }
+
+# Creation of a ‘DiscountedProduct’ object
+$samsung = new DiscountProd("Samsung S24", 1200, 200);
+
+echo "The final price of " . $samsung->name . " is: " . $samsung->getPrice();
 
 
