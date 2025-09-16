@@ -11,12 +11,13 @@ Esercizio 4:
 
 */
 
-function stampAndControl($var) {
-    if($var != null && $var != false) {
-        echo "Printed variable!";
+function printAndCalculate($var) {
+    if (!empty($var)) { // If the variable is NOT empty...
+        echo "The variable is valid: " . $var;
     } else {
-        echo "Not valid variable!";
+        echo "Invalid variable!";
     }
 }
 
-stampAndControl("");
+printECalculate("text"); // Output: The variable is valid: text
+printECalculate(0); // Output: Invalid variable!

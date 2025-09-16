@@ -12,14 +12,13 @@ Esercizio 2:
 
 $username = "Lorenzo";
 
-$varExist = function() use($username) {
-    if (isset($username) && empty($username)) {
-        echo "The var 'username' exist and has a value!";
+if (isset($username)) {
+    if (empty($username)) {
+        echo "The variable exists but is empty!";
     } else {
-        echo "The var 'username' doesn't exist and hasn't a value!";
+        echo "The variable exists and has a value";
     }
-    return $varExist;
-};
-
-
+} else {
+    echo "The variable does not exist";
+}
 

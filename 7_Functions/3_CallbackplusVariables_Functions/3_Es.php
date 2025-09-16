@@ -9,20 +9,17 @@ Esercizio 3:
 
 */
 
-$operations = function($doubleOrSquare) {
-
-    $newArr = [];
-
-    foreach ($arr as $num) {
-        $double = $num * $num;
-        $newArr[] = $double;
-    } 
-
-    return $newArr;
+$operations = function($num) {
+    return $num * $num; 
 };
 
-function calculate(){
-    $callbackFn($doubleOrSquare);
+function calculate($arr, $callbackFn){
+    $newArr = [];
+    foreach ($arr as $num) {
+        $newArr[] = $callbackFn($num);
+    }  
+    return $newArr;
 }
 
-calculate([1,2,3,4,5]);
+$result = calculate([1,2,3,4,5], $operations);
+print_r($result);
