@@ -18,23 +18,41 @@ class Student {
     public $name;
     public $votes;
 
-    public function __construct($name, $votes = []) {
+    // The constructor only accepts the name and initialises the votes array as empty.
+    public function __construct($name) {
         $this->name = $name;
-        $this->votes = $votes;
+        $this->votes = []; // Empty array
     }
 
-    public function addVote() {
-        foreach($votes as $vote) {
-            echo $vote++;
+    // Method to add a vote. Accepts one parameter.
+    public function addVote($vote) {
+        // Adds the vote to our votes array.
+        $this->votes[] = $vote;
+    }
+
+    // Method to calculate the average.
+    public function calcAverage() {
+        // We check that there are votes to avoid division by zero.
+        if (count($this->votes) > 0) {
+            // Calculate the sum and divide it by the number of votes.
+            $totalVotes = array_sum($this->votes);
+            $numberOfVotes = count($this->votes);
+            return $totalVotes / $numberOfVotes;
+        } else {
+            return 0; // If there are no votes, the average is 0.
         }
     }
-
-    public function calcMedia(){
-        echo "Sum of the votes: " . array_sum($votes);
-    }
-
 }
 
-$newStudent = new Student("Pino", 32);
-$newStudent->addVote();
-$newStudent->calcMedia();
+// Let's create a new student object.
+$newStudent = new Student("Pino");
+
+// Let's add the votes using the method we created.
+$newStudent->addVote(8);
+$newStudent->addVote(7);
+$newStudent->addVote(9);
+
+// Let's call the method to calculate the average and print the result.
+echo "The average of the votes for " . $newStudent->name . " is: " . $newStudent->calcAverage();
+
+?>
