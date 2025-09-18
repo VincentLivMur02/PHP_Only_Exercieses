@@ -81,9 +81,7 @@ class Ebook extends Book {
     # methods 
     # ovverride method "getInfo"
     public function getInfo(){
-        echo "Title: " . $this->title . "<br> 
-        Author: " . $this->author . "<br> 
-        Year of Publication: " . $this->yearOfPublication . "<br>
+        return parent::getInfo() . "<br>
         File dimension: " . $this->dimensionFile . "Mb";
     }
 }
@@ -95,14 +93,14 @@ class Library {
     public static $catalog = []; # empty array
 
     # method
-    public static function addArticles($book, $ebook) { # parameters
-        self::$catalog[]= $book || $ebook;
+    public static function addArticles($item) { # parameters, accept a single item
+        self::$catalog[]= $item; # Add the single item to the array
         self::$numArticles++;  
     }
 }
 
 # new obj
-$newBook = new Book("Harry Potter and the Sorcerer's Stone" , "J. K. Rowling",  1997, 10.87);
+$newBook = new Book("Harry Potter and the Sorcerer's Stone" , "J. K. Rowling",  1997);
 $newEbook = new Ebook("The Hobbit", "J.R.R. Tolkien", 1937, 2.86);
 $newEbookTwo = new Ebook("Dune", "Frank Herbert", 1965, 15.00);
 
@@ -112,9 +110,9 @@ Library::addArticles($newEbook);
 Library::addArticles($newEbookTwo);
 
 # print total numarticles
-echo "Total students subscribed: " . Course::$numArticles . "<br><br>";
+echo "Total students subscribed: " . Library::$numArticles . "<br><br>";
 
 # iterate on the array "catalog"
-foreach(Library::$numArticles as $singleArticle){
-    $singleArticle->getInfo();
+foreach(Library::$catalog as $singleArticle){
+    echo $singleArticle->getInfo() ."<br><br>";
 } 
