@@ -67,40 +67,39 @@ class Person {
         $this->age = $age;
     }
 
+    # public getters to access private properties
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getAge() {
+        return $this->age;
+    }
+
     # methods 
     public function introducedYourself() {
-        echo "My name is " . $this->name . " and i have " . $this->age . " years old.";
+        echo "My name is " . $this->name . " and I am " . $this->age . " years old.<br>";
     }
 }
 
-# creation of a calss "Student" who inherits (eredita) from class "Person"
+# creation of a class "Student" who inherits (eredita) from class "Person"
 class Student extends Person {
     # property 
-    private $votes;
+    private $votes = []; # votes array initialized as empty
 
     # construct
-    public function __construct($name, $age, $votes){
-        parent::__construct($name,$age); # we need it to extends all the Parent class from the Child one
-        $this->votes = []; # whit empty array 
+    public function __construct($name, $age){
+        parent::__construct($name, $age); 
     }
 
     # methods
-    public function addVotes($vote) { # parameter $vote represent the number
-        # accapet and add a number inside the array
+    public function addVotes($vote) {
         $this->votes[] = $vote;
     }
 
-    public function calcMedia($votes = []) { # calculating the media of all votes in the array
-        $totalVotes = 0; # start whit 0
-        
-        foreach ($votes as $vote) { # iteration of the array whit foreach loop
-            $totalVotes += $vote->addVotes(); # calc the media and added all votes in the array
-        }
-        
-        $numberOfVotes = count($votes); # how many values do we need to calculate the avarage grade? 
-        
-        if ($numberOfVotes > 0) {
-            return $totalVotes / $numberOfVotes;
+    public function calcMedia() {
+        if (count($this->votes) > 0) {
+            return array_sum($this->votes) / count($this->votes);
         } else {
             return 0;
         }
@@ -110,36 +109,42 @@ class Student extends Person {
 # creation of class Course
 class Course {
     # properties
-    public static $numberOfSub;
-    public static $studentsList;
-
-    # construct 
-    public function __construct($numberOfSub, $studentsList) {
-        $this->numberOfSub = 0;
-        $this->studentsList = [];
-    }
+    public static $numberOfSubscribers = 0;
+    public static $studentsList = [];
 
     # method
-    public static function signUpStud($student) { # accept an object "student" as parameter
-        $this->studentsList[] = $student; # add the students into the array "studentsList"
-        $this->numberOfSubs++; # increment the number of subscribers
+    public static function signUpStudent(Student $student) {
+        self::$studentsList[] = $student;
+        self::$numberOfSubscribers++;
     }
 }
 
+# Esercizio 4 - Usa il Sistema
 # creation of new obj
-$studentOne = new Student("Jhon", "Pinkfloid", addVotes(1, 3.5, 9));
-$studentTwo = new Student("Russel", "Fluded", addVotes(4, 5.6, 2));
-# static method? We need :: for use it
-Student::$studentOne->signUpStud();
-Student::$studentTwo->signUpStud();
-Course::$numberOfSub;
-# we need to iterate on the array "studentsList"
-foreach($studentsList as $singleStudent){
+$studentOne = new Student("John", 25);
+$studentTwo = new Student("Russell", 30);
+
+# give votes to each student
+$studentOne->addVotes(9);
+$studentOne->addVotes(7.5);
+$studentOne->addVotes(8);
+
+$studentTwo->addVotes(6.5);
+$studentTwo->addVotes(8);
+$studentTwo->addVotes(9.5);
+
+# use the static method from Course class to register students
+Course::signUpStudent($studentOne);
+Course::signUpStudent($studentTwo);
+
+# print total subscribers
+echo "Total students subscribed: " . Course::$numberOfSubscribers . "<br><br>";
+
+# iterate on the array "studentsList"
+foreach(Course::$studentsList as $singleStudent){
     $singleStudent->introducedYourself();
-    $singleStudent->calcMedia();
+    echo "Average grade: " . $singleStudent->calcMedia() . "<br><br>";
 }
-
-
 
 
 
