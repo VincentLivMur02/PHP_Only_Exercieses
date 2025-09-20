@@ -48,7 +48,7 @@ class Rectangle implements GeometricForm {
     # construct
     public function __construct($base,$height){
         $this->base = $base;
-        $this->height = $base;
+        $this->height = $height;
     }
 
     # methods
@@ -73,7 +73,7 @@ class Circle implements GeometricForm {
 
     # methods
     public function calcArea(){ # implements method of the interface, and override the method
-        echo "Area of the Circle: " . M_PI * $this->ray . "<br>"; # with M_PI we can calculate the Pi ( pi greco )  
+        echo "Area of the Circle: " . M_PI * pow($this->ray, 2) . "<br>"; # with M_PI we can calculate the Pi ( pi greco )  
     }
 
     public function calcPerimeter() { # permieter is wrong... circumference is good
@@ -83,13 +83,17 @@ class Circle implements GeometricForm {
 
 # function
 function printFormDetails($geometricForm) {
-    echo $geometricForm->calcArea(), $geometricForm->calcPerimeter();
+    $geometricForm->calcArea();
+    $geometricForm->calcPerimeter();
 }
 
 $newRectangle = new Rectangle(3, 8);
 $newCircle = new Circle(5);
 
+echo "Rectangle:<br>";
 printFormDetails($newRectangle);
+echo "<br>";
+
+echo "Circle:<br>";
 printFormDetails($newCircle);
-
-
+echo "<br>";

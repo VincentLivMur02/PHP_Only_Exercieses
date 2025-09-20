@@ -76,7 +76,7 @@ class PostgreSQL implements DatabaseInterface {
 # function connecttoDb
 function connectToDb(DatabaseInterface $databaseInterface) {
     $databaseInterface->connect();
-    $databaseInterface->executeQuery("'Hello, you'r in the DB'<br>");
+    $databaseInterface->executeQuery("SELECT * FROM users");
 }
 
 # instance
@@ -84,4 +84,5 @@ $newMySQLDb = new MySQL();
 $newMyPostgreSQLDb = new PostgreSQL();
 
 connectToDb($newMySQLDb);
+echo "<br>";
 connectToDb($newMyPostgreSQLDb);
