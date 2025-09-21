@@ -80,49 +80,91 @@ interface Driveable {
 }
 
 # class
-class Veicle {
+class Vehicle {
     # property
     public $type = "Generic";
+    protected $brand;
+
+    public function __construct($brand = "General"){
+        $this->brand = $brand;
+    }
+
+    // Public ‘getter’ method to access the brand
+    public function getBrand() {
+        return $this->brand;
+    }
 }
 
-class Car extends Veicle implements Driveable {
-    public $type;
+class Car extends Vehicle implements Driveable {
+    public function __construct($brand) {
+        parent::__construct($brand);
+        $this->type = "Car";
+    }
+
+    public function drive() {
+        echo "Car is driving.<br>";
+    }
 }
-class Motorbike extends Veicle implements Driveable {
-    public $type;
+class Motorbike extends Vehicle implements Driveable {
+    public function __construct($brand) {
+        parent::__construct($brand);
+        $this->type = "Motorbike";
+    }
+    
+    public function drive() {
+        echo "Motorbike is driving.<br>";
+    }
 }
 
 class Garage {
     public static $inventory = [];
 
-    # construct
-    public function __construct($inventory) {
-        $this->inventory = [];
-    }
-
     # methods
-    public static function addVeicle($veicle){
-        $this->inventory[] = $veicle; 
+    public static function addVehicle(Vehicle $vehicle){
+        self::$inventory[] = $vehicle; 
     }
-    public static function analyseInventory(){
-        foreach($veicle as $foundVeicle){
-            if ($foundVeicle instanceof Car || $foundVeicle instanceof Motorbike & $foundVeicle instanceof Driveable) {
-                echo "You can drive this veicle";
+    public static function analyzeInventory(){
+        echo "--- Inventory Analysis ---<br>";
+        foreach(self::$inventory as $foundVehicle){
+            if ($foundVehicle instanceof Car) {
+                echo "A car was found in the garage.<br>";
+            } else if ($foundVehicle instanceof Motorbike) {
+                echo "Found a motorbike in the garage.<br>";
+            } else {
+                echo "Found an unknown vehicle.<br>";
+            }
+
+            // Check for Driveable interface
+            if ($foundVehicle instanceof Driveable) {
+                echo "This vehicle can be driven.<br>";
             }
         }
-
+        echo "--------------------------<br>";
     }
-    public static function printinfoVeicle($veicle){
-        if($veicle instanceof Car){
-            $veicle->$type;
+
+    public static function printInfoVehicle(Vehicle $vehicle){
+        if($vehicle instanceof Car){
+            echo "It's a " . $vehicle->type . " branded " . $vehicle->getBrand() . ".<br>";
+        } else if ($vehicle instanceof Motorbike) {
+            echo "It's a " . $vehicle->type . " branded " . $vehicle->getBrand() . ".<br>";
         }
     }
 }
 
-$newCar = new Car("Fiat");
-$newMotorbike = new Motorbike("Ducati");
-Garage::analyseInventory();
-Garage::printinfoVeicle();
+// Create objects and test the system
+$myCar = new Car("Fiat");
+$myMotorbike = new Motorbike("Ducati");
+
+// Add vehicles to inventory
+Garage::addVehicle($myCar);
+Garage::addVehicle($myMotorbike);
+
+// Analyse inventory
+Garage::analyzeInventory();
+
+// Print info for a single vehicle
+Garage::printInfoVehicle($myCar);
+Garage::printInfoVehicle($myMotorbike);
 
 
 
