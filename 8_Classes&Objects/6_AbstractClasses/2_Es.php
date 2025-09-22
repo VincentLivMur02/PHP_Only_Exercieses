@@ -38,7 +38,6 @@ Esercizio 8: (2)
 
 - Spiega nei commenti il perché la funzione processaAnimale() può accettare entrambi gli oggetti.
 
-
 */
 
 # es4
@@ -51,7 +50,7 @@ abstract class Animal {
 
     # concrete method
     public function eat(){
-        echo "The animal is eating.<br>";
+        echo $this->name . " is eating.<br>";
     }
     # abstract method
     abstract public function doSound();
@@ -60,31 +59,24 @@ abstract class Animal {
 # es5
 class Dog extends Animal {
 
-    public function __construct($name) {
-        parent::__construct($name);
-    }
-
     # implementation of abstract method
     public function doSound(){
-        echo "The Dog " . $this->name . " make Bau Bau<br>";
+        echo $this->name . " make Bau Bau<br>";
     }
 }
 
 # es6
 class Cat extends Animal {
 
-    public function __construct($name) {
-        parent::__construct($name);
-    }
-
     # implementation of abstract method
     public function doSound(){
-        echo "The Cat " . $this->name . " make Miaoo Miaoo<br>";
+        echo $this->name . " make Miaoo Miaoo<br>";
     }
 }
 
 # es7
-function animalProcess(Animal $animal) {    
+function animalProcess(Animal $animal) {
+    echo "Animal process: " . $animal->name . "<br>";    
     $animal->eat();
     $animal->doSound();
 }
@@ -95,7 +87,12 @@ $cat = new Cat("Mss Mia");
 animalProcess($dog);
 animalProcess($cat);
 
-echo "We can pass all the objects because, in function 'animalProcess' we have inizialized and implementaized the abstract methods of the abstract class 'Animal'.<br>";
+/*
+Spiegazione Esercizio 8:
+- La funzione `processaAnimale()` può accettare sia un oggetto `Cane` che un oggetto `Gatto` perché entrambe le classi figlie estendono la classe astratta `Animale`.
+
+- Questo è un esempio di polimorfismo: la funzione si aspetta un tipo generico (`Animale`) ma può lavorare con qualsiasi tipo specifico che ne derivi, come `Cane` e `Gatto`.
+*/;
 
 
 

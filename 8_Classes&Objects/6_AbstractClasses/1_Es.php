@@ -80,7 +80,10 @@ class Rectangle extends Form {
     }
 }
 
-// $newForm = new Form(); we can't instantiate an abstract class
+# es8 (1)
+echo "<h2>Test Exercise 8 (Part 1)</h2>";
+// You cannot instantiate an abstract class. This would generate a fatal error.
+// $newForm = new Form(); 
 
 $newCircle = new Circle("<b>White</b>", 5);
 $newRectangle = new Rectangle("<b>Brown</b>", 10, 8);
