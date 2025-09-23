@@ -16,30 +16,42 @@ Esercizio 5 - Copia di un Oggetto con un Array di Oggetti:
 
 class Tag {
     public $name;
+
+    # construct
+    public function __construct($name) {
+        $this->name = $name;
+    }
 }
 
 class Product {
+    public $price = 100;
     public $tags = [];
 
-    public function __construct() {
+    public function addTag($name) {
         // The Product class contains an instance of the Tags class.
-        $this->tags = new Tag();
+        $this->tags[] = new Tag($name);
     }
 
     public function __clone(){
-        $this->tags = clone $this->tags;
-    }
-
-    # method
-    public function addTag($name) {
-        $this->tags[]++;
+        foreach($this->tags as $key => $tags){
+            $this->tags[$key]= clone $tags;
+        }
     }
 }
 
-$newProd = new Product(["Jhon", "Vincenzo", "Martina", "Sara"]);
-$copyNewProd = clone $newProd;
-$copyNewProd->addTag(["Giovanni"]);
+$original = new Product();
+$original->addTag("Jhon");
+$original->addTag("Fiona");
 
-echo $newProd;
+$copy = clone $original;
+$copy->tags[0]->name = "Sara";
 
+echo "Original product tag: " . $original->tags[0]->name . "<br>";
+echo "Copy product tag: " . $copy->tags[0]->name . "<br>";
 
+/*
+Spiegazione:
+
+Il metodo __clone() itera sull'array e clona ogni oggetto Tag, assicurando che le modifiche non si sovrappongano.
+
+*/
