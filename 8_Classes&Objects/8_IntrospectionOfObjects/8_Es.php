@@ -16,5 +16,5 @@ class User {
     public function sayGoodbye() {}
 }
 
-$classMethods = get_class_methods("User");
-var_dump($classMethods);
+print_r(get_class_methods("User"));
+

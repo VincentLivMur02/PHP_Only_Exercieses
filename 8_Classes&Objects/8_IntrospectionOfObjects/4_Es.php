@@ -13,26 +13,33 @@ Esercizio 4 - method_exists() (Uso avanzato):
 */
 
 class Notificator {
-    public function sendEmail(){}
-    public function sendSMS(){}
+    public function sendEmail(){
+        echo "Sent email...<br>";
+    }
+    public function sendSMS(){
+        echo "Sent SMS...<br>";
+    }
 }
 
 class Message {
-    public function sendEmail(){}
+    public function sendEmail(){
+        echo "Sending email only from message...<br>";
+    }
 }
+
+
+function userNotification($object) {
+    if (method_exists($object, "sendEmail")) {
+        $object->sendEmail();
+    } 
+    if (method_exists($object, "sendSMS")) {
+        $object->sendSMS();
+    }
+} 
 
 $newNotificator = new Notificator();
 $newMess = new Message();
 
 
-function userNotification($object) {
-    if (method_exists($newNotificator, "sendEmail")) {
-        echo "The method 'sendEmail()' are available: $object";
-    } else if (method_exists($newNotificator, "sendSMS")){
-        echo "The method 'sendSMS()' are available: $object";
-    } else if (method_exists($newMess, "sendEmail")){
-        echo "The method 'sendEmail()' are available: $object";
-    }
-} 
-
-userNotification();
+userNotification($newNotificator);
+userNotification($newMess);

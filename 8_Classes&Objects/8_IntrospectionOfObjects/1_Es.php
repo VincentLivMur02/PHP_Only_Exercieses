@@ -16,16 +16,13 @@ $data = new stdClass();
 $string = "Hello";
 
 if (is_object($data)) {
-    echo "The variable 'data' is an Object: " . $data . "<br>";
+    echo "The variable 'data' is an Object <br>";
 } else {
-    echo "The variable 'data' isn't an Object: " . $data . "<br>";
+    echo "The variable 'data' isn't an Object <br>";
 }
 
 if (is_object($string)) {
-    echo "The variable 'string' is a string: " . $string . "<br>";
+    echo "The variable 'string' is an Object <br>";
 } else {
-    echo "The variable 'string' isn't a string: " . $string . "<br>";
+    echo "The variable 'string' isn't an Object <br>";
 }
-
-var_dump($data);
-var_dump($string);

@@ -16,6 +16,5 @@ class User {
     private $password;
 }
 
-$user4 = new User();
-print_r(get_class_vars($user4));
+print_r(get_class_vars("User"));
 
