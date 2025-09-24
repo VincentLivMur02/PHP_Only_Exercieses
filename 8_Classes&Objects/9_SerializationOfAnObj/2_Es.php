@@ -14,20 +14,32 @@ Esercizio 4 - Serializzazione di Risorse:
 
 */
 
-class Db {
-    public $resource;
+class Database {
+    private $resource; // A non-serialisable resource
+    public $status = "disconnected";
 
-    public function __sleep() {}
+    public function __construct() {
+        $this->resource = "dummy connection";
+        $this->status = "connected";
+    }
+
+    public function __sleep() {
+    // Close the resource before serialising
+    $this->resource = null;
+    $this->status = "disconnected";
+    return ['status']; // Save only the status, not the resource
+}
+
     public function __wakeup() {
-        echo "Resource is in progress..";
+        // Restore the resource after deserialisation
+        $this->resource = "new dummy connection";
+        $this->status = "connected";
     }
 }
 
-$db = new Db();
-$serializeDb = serialize($db);
-
-echo "Serialized Db: " . $serializeDb . "<br>";
-
-$deserializedDb = unserialize($serializeDb);
-
-echo "Deserialized Db: " . $deserializedDb . "<br>";
+$db = new Database();
+echo "Initial status: " . $db->status . "<br>";
+$dbString = serialize($db);
+echo "Serialised string: " . $dbString . "<br>";
+$db2 = unserialize($dbString);
+echo "State after deserialisation: " . $db2->status . "<br>";

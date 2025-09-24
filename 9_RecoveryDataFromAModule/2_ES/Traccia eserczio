@@ -1,0 +1,21 @@
+ES_2
+HTML: 
+- Crea una pagina (prodotti.html) con un form per la ricerca di prodotti.
+
+- Un campo di testo per la ricerca (name="termine_ricerca").
+
+- Un menu a tendina (select) con diverse categorie (name="categoria").
+
+- Il form deve avere method="get" e action="risultati.php".
+
+----------------------------
+
+PHP - Nel file risultati.php:
+
+- Recupera il termine_ricerca e la categoria dall'array $_GET.
+
+- Controlla che i valori non siano vuoti.
+
+- Stampa un messaggio come "Risultati per 'X' nella categoria 'Y'".
+
+- Usa htmlspecialchars() sui dati recuperati.

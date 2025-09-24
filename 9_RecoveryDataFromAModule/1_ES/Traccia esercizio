@@ -1,0 +1,27 @@
+ES_1 
+HTML: Crea un form HTML (contatto.html) con i seguenti campi:
+
+- Un campo di testo per il nome (name="nome").
+
+- Un campo di testo per l'email (name="email").
+
+- Una textarea per il messaggio (name="messaggio").
+
+- Un pulsante di invio (type="submit").
+
+- Assicurati che il form abbia l'attributo method="post" e action="salva_contatto.php".
+
+---------------
+
+PHP: Nel file salva_contatto.php:
+
+- Verifica che i dati del form siano stati inviati usando isset($_POST['nome']).
+
+- Se i dati sono presenti, recupera i valori dei campi nome, email e messaggio.
+
+- Usa htmlspecialchars() su ogni variabile prima di stamparla.
+
+- Stampa un messaggio che confermi l'invio, mostrando i dati inseriti.
+
+- Se i dati non sono presenti, stampa un messaggio di errore.
+

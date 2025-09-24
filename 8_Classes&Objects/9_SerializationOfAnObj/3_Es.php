@@ -54,11 +54,6 @@ Esercizio 10 - Riflessione Finale:
 
 */
 
-$data = [
-    "name" => "Pablo",
-    "city" => "New Mexico"
-];
-
 class User {
     public $name;
     public $email;
@@ -69,17 +64,38 @@ class User {
     }
 }
 
-# convert $data into JSON file
-$jsonConverterData = json_encode($data);
-echo "New string JSON: " . $jsonConverterData . "<br>";
-
+echo "<h3>Exercise 5</h3>";
+$data = ["name" => "Pablo", "city" => "New Mexico"];
+$json = json_encode($data);
+echo "JSON from array: " . $json . "<br>";
 echo "<hr>";
 
-$jsonObject = json_decode($associative, false);
-echo "Product name (from object): " . $jsonObject->name . "<br>";
-
+echo "<h3>Exercise 6</h3>";
+$userJson = new User("Vincenzo Rosso", "vincenzo.rosso@libero.it");
+$jsonUser = json_encode($userJson);
+echo "JSON from object: " . $jsonUser . "<br>";
 echo "<hr>";
 
-$newUser3 = new User("Vincenzo Rosso", "vincenzoRossos@libero.it");
-$jsonConverterUser = json_encode($newUser3);
-echo "New string JSON, after converted User class: " . $jsonConverterUser . "<br>";
+echo "<h3>Exercise 7</h3>";
+$decodedObject = json_decode($jsonUser);
+echo "Name from decoded object: " . $decodedObject->name . "<br>";
+echo "<hr>";
+
+echo "<h3>Exercise 8</h3>";
+$decodedArray = json_decode($jsonUser, true);
+echo "Name from the decoded array: " . $decodedArray["name"] . "<br>";
+echo "<hr>";
+
+echo "<h3>Exercise 9</h3>";
+$jsonPretty = json_encode($userJson, JSON_PRETTY_PRINT);
+echo "Formatted JSON:<br>";
+echo "<pre>" . $jsonPretty . "</pre>";
+echo "<p>Explanation: The <b>JSON_PRETTY_PRINT</b> flag formats JSON with indentation and new lines, making it more readable.</p>";
+echo "<hr>";
+
+// Exercise 10: Final Reflection
+/* 
+La serializzazione con serialize() è utile per salvare e ripristinare dati tra processi PHP, mantenendo le informazioni sulla classe. La serializzazione con json_encode() è il formato preferito per la comunicazione tra sistemi diversi (API, JavaScript) perché è universale e leggibile da tutti i linguaggi di programmazione.
+*/
+
+?>
