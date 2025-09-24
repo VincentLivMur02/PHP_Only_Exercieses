@@ -3,7 +3,9 @@
 # verify if the dates are sended by the method POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # verify if the var 'name', 'email' and 'message' exist into the array POST
-    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+    if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['message']) && !empty($_POST['message'])) {
+        # !empyt useful for more strong validation
+        
         # use the htmlspecialchars() to verify variables and print...
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
@@ -33,4 +35,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ";
 }
 
-// dubbi

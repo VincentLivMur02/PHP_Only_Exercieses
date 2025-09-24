@@ -3,7 +3,7 @@
 # data recovery of 'search_term' and 'categories' of array GET
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     # verify if the var 'search_term' and 'categories' exist into the array GET
-    if (isset($_GET['search_term']) && isset($_GET['categories'])) {
+    if (isset($_GET['search_term']) && !empty($_GET['search_term']) && isset($_GET['categories']) && !empty($_GET['categories']))  {
         # use the htmlspecialchars() to verify variables and print...
         $searchTerm = htmlspecialchars($_GET['search_term']);
         $categories = htmlspecialchars($_GET['categories']);
