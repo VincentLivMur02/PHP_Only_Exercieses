@@ -1,0 +1,21 @@
+ES_4: Calcolatore di Spesa
+
+- HTML: Crea un form spesa.html per calcolare il costo totale di un prodotto.
+
+- Un campo di testo per il prezzo del prodotto (name="prezzo").
+
+- Un campo di testo per la quantità (name="quantita").
+
+- Un pulsante di invio.
+
+-----------------------
+
+PHP - Nel file calcola_spesa.php:
+
+- Recupera prezzo e quantita usando il metodo appropriato.
+
+- Verifica che i campi esistano (isset()) e non siano vuoti (!empty()).
+
+- Se la validazione ha successo, calcola il totale moltiplicando i due valori e stampalo. Assicurati che i valori siano numeri (puoi usare is_numeric()).
+
+- Se la validazione fallisce, mostra un messaggio di errore.

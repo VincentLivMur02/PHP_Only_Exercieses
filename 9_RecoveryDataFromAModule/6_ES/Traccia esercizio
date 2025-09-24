@@ -1,0 +1,21 @@
+ES_6: 
+
+HTML: Crea un form registrazione_avanzata.html.
+
+- Un campo per il nome utente (name="username").
+
+- Un campo per la password (name="password").
+
+- Un campo per la conferma della password (name="conferma_password").
+
+PHP - Nel file processa_registrazione.php:
+
+- Recupera tutti e tre i campi.
+
+- Verifica che i campi username, password e conferma_password non siano vuoti (!empty()).
+
+- Se i campi sono validi, aggiungi una logica per verificare che i valori di password e conferma_password siano uguali.
+
+- Se le password corrispondono, stampa un messaggio di successo.
+
+- Se non corrispondono, stampa un messaggio di errore come "Le password non coincidono".

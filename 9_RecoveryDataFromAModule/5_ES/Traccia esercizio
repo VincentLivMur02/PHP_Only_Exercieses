@@ -1,0 +1,13 @@
+ES_5: Lista della Spesa (con checkbox e un file unico)
+
+- HTML & PHP (in un unico file): Crea un unico file lista_spesa.php.
+
+- Inizialmente, quando la pagina viene caricata, mostra un form con una serie di checkbox per diversi prodotti (es. "Latte", "Pane", "Uova"). Ogni checkbox deve avere lo stesso name con le parentesi quadre (name="articoli[]").
+
+- Il form deve inviare i dati a se stesso (action="lista_spesa.php").
+
+- Dopo l'invio, usa $_SERVER['REQUEST_METHOD'] per verificare che la richiesta sia POST.
+
+- Se è POST, recupera l'array articoli da $_POST.
+
+- Con un ciclo foreach, stampa un elenco (una ul o ol) di tutti gli articoli selezionati dall'utente.
