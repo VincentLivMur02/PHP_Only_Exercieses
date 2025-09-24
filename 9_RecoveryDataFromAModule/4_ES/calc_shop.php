@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         <input type='text' name='quantity'>
         <br>
         <br>
-        <button type='send'>Send</button>
+        <button type='submit'>Send</button>
     </form>
     ";
 }

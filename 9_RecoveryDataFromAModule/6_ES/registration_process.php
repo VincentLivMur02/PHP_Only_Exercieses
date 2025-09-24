@@ -7,13 +7,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     $confirm_password = htmlspecialchars($_POST['confirm_password']);
+        # Check if the passwords match
+        if ($password === $confirm_password){
+            echo "Registration success!";
+        } else {
+            echo "Registration failed. The passwords don't match. Please try again.";
+        }
 
-    if ($password === $confirm_password){
-        echo "Registration success!";
     } else {
-        echo "Registration failed. The passwords don't match. Please try again.";
+        echo "Error: Missing data! Please fill in all fields.";
     }
-    }
+} else {
+    // If the request is NOT POST, it is direct access.
+    // So we redirect the user to the HTML form.
+    // header(“Location: advanced_registration.html”);
+    echo "Error: Direct access to this file is not allowed. Please use the registration form.";
 }
 
-// dubbi... perchè quando le credenziali non sono inserite non mi appare più un form?

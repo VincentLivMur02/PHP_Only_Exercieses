@@ -1,11 +1,11 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') { # verify the method
-    if (isset($_GET['articles']) && !empty($_GET['articles']) && is_array($_GET['articles'])) { # we use 'is_array( )' to verify if the variables are an array
+if ($_SERVER['REQUEST_METHOD'] == 'POST') { # verify the method
+    if (isset($_POST['articles']) && !empty($_POST['articles']) && is_array($_POST['articles'])) { # we use 'is_array( )' to verify if the variables are an array
         # print ul tag
         echo "<h3>The articles are :</h3>";
         echo "<ul>"; 
-        foreach ($_GET['articles'] as $article) {
+        foreach ($_POST['articles'] as $article) {
             echo "<li>" . htmlspecialchars($article) . "</li>";
         } # foreach found article, return an li tag whit the same article
         echo "</ul>";
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') { # verify the method
             <title>Esercizio 4 - Calcolatore di Spesa</title>
         </head>
         <body>
-            <form action="shop_list.php" method="get">
+            <form action="shop_list.php" method="post">
                 <input type="checkbox" name="articles[]">
                 <label for="bread"> Bread </label>
                 <br>
