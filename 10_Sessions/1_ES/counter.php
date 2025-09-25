@@ -5,9 +5,9 @@ session_start();
 
 # verify if the variable exist
 if (isset($_SESSION['visits'])) {
-    echo "The session exist: " . $_SESSION['visits'] . "<br>";
+    $_SESSION['visits'] = $_SESSION['visits'] + 1;
 } else {
-    echo "The sessione is equal to: " . $_SESSION['visits'] = 1 . "<br>";
+    $_SESSION['visits'] = 1;
 }
 
 echo "You have visited this page " . $_SESSION['visits'] . " times <br>";

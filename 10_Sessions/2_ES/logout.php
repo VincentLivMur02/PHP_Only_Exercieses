@@ -3,9 +3,11 @@
 
 session_start(); # start the session
 
-session_unset($_SESSION['logged_in']); # remove all session variables 'logged_in'
+session_unset(); # remove all session variables 
 
-session_destroy($_SESSION['logged_in']); # destroy all data registered to a session
+session_destroy(); # destroy all data registered to a session
 
-echo header('Location:dashboard.php') . "Session destroied. You've logged out.<br>
-<a href='login.php'>Login</a>";
+header('Location:dashboard.php'); // Redirects the user to the login page
+exit; // IMMEDIATELY STOPS the script
+
+// Nothing will be printed after the header!

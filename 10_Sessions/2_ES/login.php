@@ -10,9 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username= htmlspecialchars($_POST['username']);
         $password = htmlspecialchars($_POST['password']);
 
-        echo $_SESSION['logged_in'] = true . header('Location:dashboard.php'); # redirect user to the dashboard.php
+        $_SESSION['logged_in'] = true;
+        header('Location:dashboard.php'); # redirect user to the dashboard.php
+        exit; # stop the PHP script immediately
     } else {
-        echo "Missing username or password. Please try again.";
+        $error_message = "Missing username or password. Please try again.";
     }
 } 
 
@@ -26,6 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Esercizio 2 - Session_start e Form</title>
 </head>
 <body>
+    <?php
+    # Display the error message if there is one
+    if (isset($error_message)) {
+        echo "<p style='color:red;'>$error_message</p>";
+    }
+    ?>
     <form action="login.php" method="post">
         <label for="username">Username:</label>
         <input type="text" name="username">
