@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="username">
         <br>
         <br>
-        <label for="email">Email:</label>
-        <input type="text" name="email">
+        <label for="password">Password:</label>
+        <input type="password" name="password">
         <br>
         <br>
         <button type="submit">Submit</button>
