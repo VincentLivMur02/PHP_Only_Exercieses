@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Servizio PHP (il tuo applicativo)
+  php-server:
+    build: .
+    container_name: php_example_2
+    ports:
+      - "8080:80" # Vedrai il sito su http://localhost:8080
+    volumes:
+      - .:/var/www/html # Sincronizza la cartella locale con il container (modifiche in tempo reale!)
+    networks:
+      - php-network
+    depends_on:
+      - db
+
+  # Servizio Database (MySQL)
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: libreria
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306" # Permette a Workbench di collegarsi
+    networks:
+      - php-network
+
+networks:
+  php-network:
+    driver: bridge
